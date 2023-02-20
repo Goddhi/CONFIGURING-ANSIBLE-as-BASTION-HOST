@@ -1,0 +1,20 @@
+# eval 'ssh-agent'
+
+
+# output :
+
+# SSH_AUTH_SOCK=/tmp/ssh-poF4v8LwLdWU/agent.40373; export SSH_AUTH_SOCK;
+# SSH_AGENT_PID=40374; export SSH_AGENT_PID;
+# echo Agent pid 4
+
+
+# ssh-add -k aws-key-pair-us-west-1.pem 
+
+# command to login into the host server using ssh agent
+# ssh -A "user name of the server e.g ubuntu""@pblic-ip-address"
+# the key created by the ssh agent will be added over to the host server after the executing the command above.
+# with the concept of ssh agent we can easily ssh into another server from the host server as far they are using the same key-pairs
+# login to the othe server from the host server by using the command below
+# ssh ubuntu@"ip-address"  ## Note we dont have to specify the key-pairas
+
+# ssh-add -l
