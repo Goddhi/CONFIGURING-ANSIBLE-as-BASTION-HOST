@@ -1,0 +1,27 @@
+- name: update web, nfs
+  hosts: webservers, nfs
+  remote_user: ubuntu
+  become: yes
+  become_user: root
+  tasks:
+    - name: ensure wireshark is at the latest version
+      yum:
+        name: wireshark
+        state: latest
+
+    - name: create a directory
+      file:
+        path: /home/ubuntu/test
+        state: directory
+
+    - name: create a file
+      file:
+        path: /home/ubuntu/test/test.txt
+        state: touch
+
+    - name: change timezone
+      command: timedatectl set-timezone Africa/Lagos
+
+    - name: run a shell script
+      shell: |
+        echo "Hello World" > /home/ubuntu/test/test.txt

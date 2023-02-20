@@ -1,0 +1,6 @@
+[nfs]
+<NFS-Server-Private-IP-Address> ansible_ssh_user='ubuntu'
+
+[webservers]
+<Web-Server1-Private-IP-Address> ansible_ssh_user='ubuntu'
+<Web-Server2-Private-IP-Address> ansible_ssh_user='ubuntu'
